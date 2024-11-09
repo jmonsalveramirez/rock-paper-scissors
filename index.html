@@ -7,6 +7,7 @@
   </head>
   <body>
     <script>
+      // Write the logic to get the computer choice
       function getComputerChoice() {
         const choices = ["Rock", "Paper", "Scissors"];
         const randomIndex = Math.floor(Math.random() * choices.length);
@@ -15,6 +16,16 @@
 
       const selectedChoice = getComputerChoice();
       console.log(selectedChoice); // Outputs one of the choices randomly
+
+      // Write the logic to get the human choice
+
+      function getHumanChoice() {
+        let humanAnswer = prompt("Rock, Paper or Scissors?");
+        return humanAnswer;
+      }
+
+      let userAnswer = getHumanChoice();
+      console.log("Your answer is:", userAnswer);
     </script>
   </body>
 </html>
