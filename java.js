@@ -8,11 +8,12 @@ function getComputerChoice() {
 
 function getHumanChoice() {
   const choice = prompt("Rock, Paper or Scissors?");
+  const choiceToLower = choice.toLowerCase;
   return choice;
 }
 
-humanScore = 0;
-computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
 function checkWinner(humanChoice, computerChoice) {
   if (humanChoice == computerChoice) {
@@ -30,6 +31,7 @@ function checkWinner(humanChoice, computerChoice) {
 
 function playRound(humanChoice, computerChoice) {
   const result = checkWinner(humanChoice, computerChoice);
+  // const toLowerCase = humanChoice.toLowerCase();
   if (result == "Tie") {
     return "Ít is a tie";
   } else if (result == "Human") {
@@ -39,6 +41,18 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-const humanChoice = "rock";
-const computerChoice = getComputerChoice();
-console.log(playRound(humanChoice, computerChoice));
+function game() {
+  console.log(
+    "Welcome! The best of 5 rounds wins. Please make your selectionS"
+  );
+  for (let i = 0; i < 5; i++) {
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+    console.log(playRound(humanChoice, computerChoice));
+  }
+}
+
+game();
+// const humanChoice = getHumanChoice();
+// const computerChoice = getComputerChoice();
+// console.log(playRound(humanChoice, computerChoice));
